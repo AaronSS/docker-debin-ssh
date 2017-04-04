@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:rolling
 
 MAINTAINER aaronss TRAN <aaronss@github.io>
 
