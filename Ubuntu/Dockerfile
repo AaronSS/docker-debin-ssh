@@ -1,6 +1,6 @@
-FROM debian:latest
+FROM ubuntu:latest
 
-MAINTAINER Minh-Quan TRAN "account@itscaro.me"
+MAINTAINER aaronss TRAN <aaronss@github.io>
 
 RUN apt-get update && \
 	apt-get install -y openssh-server && \
