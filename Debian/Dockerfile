@@ -3,7 +3,7 @@ FROM debian:latest
 MAINTAINER aaronss TRAN <aaronss@github.io>
 
 RUN apt-get update && \
-	apt-get install -y openssh-server && \
+	apt-get install -y openssh-server git vim python screenfetch && \
 	rm -rf /var/lib/apt/lists/* && \
 	apt-get clean
 
