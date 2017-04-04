@@ -1,6 +1,6 @@
 FROM debian:latest
 
-MAINTAINER aaronss TRAN <aaronss@github.io>
+MAINTAINER Minh-Quan TRAN "account@itscaro.me"
 
 RUN apt-get update && \
 	apt-get install -y openssh-server git vim python screenfetch && \
