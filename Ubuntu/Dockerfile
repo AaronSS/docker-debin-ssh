@@ -1,18 +1,15 @@
-FROM ubuntu:rolling
+FROM       ubuntu:16.04
+MAINTAINER Aleksandar Diklic "https://github.com/rastasheep"
 
-MAINTAINER aaronss TRAN <aaronss@github.io>
+RUN apt-get update
 
-RUN apt-get update && \
-	apt-get install -y openssh-server git vim python screenfetch && \
-	rm -rf /var/lib/apt/lists/* && \
-	apt-get clean
+RUN apt-get install -y openssh-server
+RUN mkdir /var/run/sshd
 
 RUN echo 'root:root' |chpasswd
 
-RUN sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config && \
-	sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
-
-RUN mkdir -p /var/run/sshd
+RUN sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
+RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 
 EXPOSE 22
 
