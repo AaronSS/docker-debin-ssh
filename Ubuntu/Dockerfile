@@ -1,9 +1,8 @@
-FROM       ubuntu:16.04
-MAINTAINER Aleksandar Diklic "https://github.com/rastasheep"
+FROM       ubuntu:rolling
+MAINTAINER Aaronss "https://github.com/AaronSS"
 
 RUN apt-get update
-
-RUN apt-get install -y openssh-server screenfetch vim vnc4server
+RUN apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
 
 RUN echo 'root:root' |chpasswd
