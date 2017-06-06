@@ -23,5 +23,5 @@ ENV DNS_ADDR    8.8.8.8
 ENV DNS_ADDR_2  8.8.4.4
 
 RUN git clone -b manyuser https://github.com/shadowsocksr/shadowsocksr.git ~/shadowsocksr
-RUN python ~/shadowsocksr/shadowsocks/server.py -p $SERVER_PORT -k $PASSWORD -m $METHOD -O $PROTOCOL -o $OBFS -d start
-CMD    ["/usr/sbin/sshd", "-D"]
+RUN service ssh restart
+CMD python ~/shadowsocksr/shadowsocks/server.py -p $SERVER_PORT -k $PASSWORD -m $METHOD -O $PROTOCOL -o $OBFS start
