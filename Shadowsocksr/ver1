@@ -2,7 +2,7 @@ FROM ubuntu:rolling
 
 MAINTAINER AaronSS
 
-# Set apt-get to automatically retry if a package download fails
+#  Set apt-get to automatically retry if a package download fails
 RUN echo 'Acquire::Retries "5";' > /etc/apt/apt.conf.d/99AcquireRetries
 
 
@@ -24,4 +24,4 @@ ENV DNS_ADDR_2  8.8.4.4
 
 RUN git clone -b manyuser https://github.com/shadowsocksr/shadowsocksr.git ~/shadowsocksr
 RUN service ssh restart
-CMD python ~/shadowsocksr/shadowsocks/server.py -p $SERVER_PORT -k $PASSWORD -m $METHOD -O $PROTOCOL -o $OBFS start
+#  CMD python ~/shadowsocksr/shadowsocks/server.py -p $SERVER_PORT -k $PASSWORD -m $METHOD -O $PROTOCOL -o $OBFS start
