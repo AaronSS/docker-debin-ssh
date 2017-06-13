@@ -23,4 +23,5 @@ ENV DNS_ADDR    8.8.8.8
 ENV DNS_ADDR_2  8.8.4.4
 
 RUN git clone -b manyuser https://github.com/shadowsocksr/shadowsocksr.git ~/shadowsocksr
-ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+#  ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+CMD python ~/shadowsocksr/shadowsocks/server.py -p $SERVER_PORT -k $PASSWORD -m $METHOD -O $PROTOCOL -o $OBFS
