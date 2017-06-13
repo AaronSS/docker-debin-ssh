@@ -1,4 +1,4 @@
-FROM ubuntu:rolling
+FROM debian:latest
 
 MAINTAINER AaronSS
 
